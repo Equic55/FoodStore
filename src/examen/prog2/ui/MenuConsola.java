@@ -247,7 +247,7 @@ public class MenuConsola {
 
         try {
             switch (opcion) {
-                // HU-USR-01: Listar usuarios
+                // Listar usuarios
                 case 1 -> {
                     List<Usuario> usuarios = usuarioService.listarUsuarios();
                     if (usuarios.isEmpty()) {
@@ -263,7 +263,7 @@ public class MenuConsola {
                     }
                 }
 
-                // HU-USR-02: Crear usuario
+                // Crear usuario
                 case 2 -> {
                     System.out.print("Ingrese nombre: ");
                     String nombre = scanner.nextLine();
@@ -285,7 +285,7 @@ public class MenuConsola {
                     }
                 }
 
-                // HU-USR-03: Editar usuario
+                //  Editar usuario
                 case 3 -> {
                     List<Usuario> usuarios = usuarioService.listarUsuarios();
                     if (usuarios.isEmpty()) {
@@ -338,7 +338,7 @@ public class MenuConsola {
                     }
                 }
 
-                // HU-USR-04: Eliminar usuario (baja lógica)
+                //  Eliminar usuario (baja lógica)
                 case 4 -> {
                     List<Usuario> usuarios = usuarioService.listarUsuarios();
                     if (usuarios.isEmpty()) {
@@ -389,7 +389,7 @@ public class MenuConsola {
 
         try {
             switch (opcion) {
-                // HU-PED-01: Listar pedidos
+                //  Listar pedidos
                 case 1 -> {
                     List<Pedido> pedidos = pedidoService.listarPedidos();
                     if (pedidos.isEmpty()) {
@@ -416,7 +416,7 @@ public class MenuConsola {
                     }
                 }
 
-                // HU-PED-02: Crear pedido con detalles
+                //  Crear pedido con detalles
                 case 2 -> {
                     usuarioService.listarUsuarios().forEach(System.out::println);
                     System.out.print("Ingrese ID usuario: ");
@@ -465,7 +465,7 @@ public class MenuConsola {
                     System.out.println("Pedido creado con éxito: " + pedido);
                 }
 
-                // HU-PED-03: Actualizar estado / forma de pago
+                //  Actualizar estado / forma de pago
                 case 3 -> {
                     pedidoService.listarPedidos().forEach(System.out::println);
                     System.out.print("Ingrese ID pedido: ");
@@ -492,7 +492,7 @@ public class MenuConsola {
                     System.out.println("Pedido actualizado con éxito.");
                 }
 
-                // HU-PED-04: Eliminar pedido (baja lógica)
+                //  Eliminar pedido (baja lógica)
                 case 4 -> {
                     pedidoService.listarPedidos().forEach(System.out::println);
                     System.out.print("Ingrese ID pedido a eliminar: ");
