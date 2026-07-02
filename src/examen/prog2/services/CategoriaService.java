@@ -81,7 +81,7 @@ public void eliminarCategoria(Long id) throws DatoInvalidoException {
         System.out.println("No se puede eliminar la categoria porque contiene productos activos");
         return;
     }
-    
+    //  baja lógica
     categoria.setEliminado(true);
     System.out.println("Categoria eliminada: " + categoria);
 }
