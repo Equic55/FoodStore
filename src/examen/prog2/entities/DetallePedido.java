@@ -20,13 +20,8 @@ public class DetallePedido extends Base {
         this.pedido = pedido;
         this.producto = producto;
         this.cantidad = (cantidad > 0) ? cantidad : 1;
-
-        // Relacion bidireccional: el pedido agrega este detalle
-        if (pedido != null && !pedido.getDetalles().contains(this)) {
-            pedido.getDetalles().add(this);
-        }
-    }
-
+    } 
+    
     // Getters y Setters
     public Pedido getPedido() { return pedido; }
     public void setPedido(Pedido pedido) { this.pedido = pedido; }
@@ -73,3 +68,4 @@ public class DetallePedido extends Base {
         return Objects.hash(getId());
     }
 }
+
