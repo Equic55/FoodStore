@@ -23,12 +23,12 @@ public class PedidoService {
 
     public Pedido crearPedido(Usuario usuario, FormaPago formaPago, Estado estado) throws DatoInvalidoException {
         if (usuario == null || usuario.isEliminado()) {
-            throw new DatoInvalidoException("El usuario no puede ser nulo o está eliminado");
+            throw new DatoInvalidoException("El usuario no puede ser nulo o esta eliminado");
         }
         Pedido pedido = new Pedido(usuario, formaPago);
         pedido.setEstado(estado);
         pedidos.add(pedido);
-        System.out.println("Pedido creado con éxito. ID: " + pedido.getId());
+        System.out.println("Pedido creado con exito. ID: " + pedido.getId());
         return pedido;
     }
 
@@ -61,6 +61,7 @@ public class PedidoService {
         Pedido pedido = buscarPorId(idPedido);
         pedido.setEliminado(true);
 
+       
         pedido.getDetalles().forEach(d -> d.setEliminado(true));
 
         System.out.println("Pedido eliminado: " + pedido);
@@ -78,3 +79,4 @@ public class PedidoService {
                 .toList();
     }
 }
+
