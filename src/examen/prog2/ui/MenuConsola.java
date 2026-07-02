@@ -285,7 +285,7 @@ public class MenuConsola {
                     }
                 }
 
-                //  Editar usuario
+                // Editar usuario
                 case 3 -> {
                     List<Usuario> usuarios = usuarioService.listarUsuarios();
                     if (usuarios.isEmpty()) {
@@ -338,7 +338,7 @@ public class MenuConsola {
                     }
                 }
 
-                //  Eliminar usuario (baja lógica)
+                // Eliminar usuario (baja logica)
                 case 4 -> {
                     List<Usuario> usuarios = usuarioService.listarUsuarios();
                     if (usuarios.isEmpty()) {
@@ -360,12 +360,12 @@ public class MenuConsola {
                             System.out.println("Error: " + e.getMessage());
                         }
                     } else {
-                        System.out.println("Operación cancelada.");
+                        System.out.println("Operacion cancelada.");
                     }
                 }
 
                 case 0 -> System.out.println("Volviendo al menu principal...");
-                default -> System.out.println("Opción inválida. Intente nuevamente.");
+                default -> System.out.println("Opcion invalida. Intente nuevamente.");
             }
         } catch (NumberFormatException e) {
             System.out.println("Error: " + e.getMessage());
@@ -374,7 +374,7 @@ public class MenuConsola {
 }
 
 
-       private void menuPedidos() {
+       private void menuPedidos(){
     int opcion;
     do {
         System.out.println("=== MENU PEDIDOS ===");
@@ -405,7 +405,7 @@ public class MenuConsola {
                         ));
                     }
 
-                    System.out.print("¿Desea filtrar por usuario? (S/N): ");
+                    System.out.print(" Desea filtrar por usuario? (S/N): ");
                     String resp = scanner.nextLine();
                     if (resp.equalsIgnoreCase("S")) {
                         usuarioService.listarUsuarios().forEach(System.out::println);
@@ -422,6 +422,7 @@ public class MenuConsola {
                     System.out.print("Ingrese ID usuario: ");
                     Long idUsuario = Long.valueOf(scanner.nextLine());
                     Usuario usuario = usuarioService.buscarPorId(idUsuario);
+                    
 
                     System.out.println("Seleccione forma de pago: 1.TARJETA 2.TRANSFERENCIA 3.EFECTIVO");
                     int fp = leerEntero();
@@ -452,9 +453,14 @@ public class MenuConsola {
                         System.out.print("Cantidad: ");
                         int cantidad = Integer.parseInt(scanner.nextLine());
 
-                        pedido.addDetallePedido(producto, cantidad); // obligatorio
+                      try {
+    pedidoService.agregarProductoAPedido(pedido.getId(), producto, cantidad);
+} catch (StockInvalidoException e) {
+    System.out.println("Error de stock: " + e.getMessage());
+}
 
-                        System.out.print("¿Agregar otro producto? (S/N): ");
+
+                        System.out.print("Agregar otro producto? (S/N): ");
                         String resp = scanner.nextLine();
                         if (!resp.equalsIgnoreCase("S")) {
                             seguir = false;
@@ -462,7 +468,7 @@ public class MenuConsola {
                     }
 
                     pedido.calcularTotal(); // obligatorio con interfaz Calculable
-                    System.out.println("Pedido creado con éxito: " + pedido);
+                    System.out.println("Pedido creado con exito: " + pedido);
                 }
 
                 //  Actualizar estado / forma de pago
@@ -489,10 +495,10 @@ public class MenuConsola {
                     };
 
                     pedidoService.modificarPedido(idPedido, estado, formaPago);
-                    System.out.println("Pedido actualizado con éxito.");
+                    System.out.println("Pedido actualizado con exito.");
                 }
 
-                //  Eliminar pedido (baja lógica)
+                // Eliminar pedido (baja lógica)
                 case 4 -> {
                     pedidoService.listarPedidos().forEach(System.out::println);
                     System.out.print("Ingrese ID pedido a eliminar: ");
@@ -504,12 +510,12 @@ public class MenuConsola {
                         pedidoService.eliminarPedido(idPedido);
                         System.out.println("Pedido eliminado correctamente.");
                     } else {
-                        System.out.println("Operación cancelada.");
+                        System.out.println("Operacion cancelada.");
                     }
                 }
 
-                case 0 -> System.out.println("Volviendo al menú principal...");
-                default -> System.out.println("Opción inválida. Intente nuevamente.");
+                case 0 -> System.out.println("Volviendo al menu principal...");
+                default -> System.out.println("Opcion invalida. Intente nuevamente.");
             }
         } catch (DatoInvalidoException | EntidadNoEncontradaException | NumberFormatException e) {
             System.out.println("Error: " + e.getMessage());
@@ -521,7 +527,7 @@ public class MenuConsola {
     try {
         return Integer.parseInt(scanner.nextLine());
     } catch (NumberFormatException e) {
-        System.out.println("Entrada inválida. Debe ingresar un número.");
+        System.out.println("Entrada invalida. Debe ingresar un numero.");
         return -1; // valor inválido para forzar repetir
     }
 }
