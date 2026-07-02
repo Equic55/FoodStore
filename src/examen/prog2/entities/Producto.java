@@ -1,3 +1,4 @@
+
 package examen.prog2.entities;
 
 import java.util.Objects;
@@ -15,7 +16,7 @@ public class Producto extends Base {
     // Constructor el id se asigna  desde Base
     public Producto(String nombre, double precio, String descripcion,
                     int stock, String imagen, boolean disponible, Categoria categoria) {
-        super(); // llama al constructor de Base que asigna id único
+        super(); 
 
         this.nombre = (nombre != null && !nombre.trim().isEmpty()) ? nombre : "Nombre invalido";
         this.precio = (precio > 0) ? precio : 0.0;
@@ -77,7 +78,7 @@ public class Producto extends Base {
                 ", precio=" + precio +
                 ", descripcion='" + descripcion + '\'' +
                 ", stock=" + stock +
-                ", categoria=" + (categoria != null ? categoria.getNombre() : "Sin categoría") +
+                ", categoria=" + (categoria != null ? categoria.getNombre() : "Sin categoria") +
                 '}';
     }
 
@@ -95,3 +96,4 @@ public class Producto extends Base {
         return Objects.hash(getId());
     }
 }
+
