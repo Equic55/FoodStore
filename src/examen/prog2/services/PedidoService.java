@@ -61,7 +61,6 @@ public class PedidoService {
         Pedido pedido = buscarPorId(idPedido);
         pedido.setEliminado(true);
 
-        // ✅ marcar también los detalles como eliminados
         pedido.getDetalles().forEach(d -> d.setEliminado(true));
 
         System.out.println("Pedido eliminado: " + pedido);
