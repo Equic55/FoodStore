@@ -12,7 +12,7 @@ public class DetallePedido extends Base {
     private Pedido pedido;
     private Producto producto;
     private int cantidad;
-    private boolean eliminado = false; // ✅ nuevo atributo para baja lógica
+    private boolean eliminado = false; 
 
     // Constructor principal
     public DetallePedido(Pedido pedido, Producto producto, int cantidad) {
