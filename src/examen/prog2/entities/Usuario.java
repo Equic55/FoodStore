@@ -22,10 +22,10 @@ public class Usuario extends Base {
     private Rol rol;
     private final List<Pedido> pedidos;
 
-    // Constructor el id se asigna desde Base
+    // Constructor: el id se asigna automáticamente desde Base
     public Usuario(String nombre, String apellido, String mail,
                    String celular, String contrasenia, Rol rol) {
-        super(); 
+        super(); // llama al constructor de Base que asigna id único
 
         this.nombre = (nombre != null && !nombre.trim().isEmpty()) ? nombre : "Nombre invalido";
         this.apellido = (apellido != null && !apellido.trim().isEmpty()) ? apellido : "Apellido invalido";
