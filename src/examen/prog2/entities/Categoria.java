@@ -13,7 +13,7 @@ public class Categoria extends Base {
     private String nombre;
     private String descripcion;
     private final List<Producto> productos;
-    private boolean eliminado = false; // NUEVO ATRIBUTO
+    private boolean eliminado = false; 
 
     // Constructor
     public Categoria(String nombre, String descripcion) {
