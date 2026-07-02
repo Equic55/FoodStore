@@ -36,7 +36,7 @@ public class UsuarioService {
     public List<Usuario> listarUsuarios() {
         return usuarios.stream()
                 .filter(u -> !u.isEliminado())
-                .collect(Collectors.toList()); // ✅ corregido
+                .collect(Collectors.toList()); 
     }
 
     // Buscar usuario por ID con nueva excepción
