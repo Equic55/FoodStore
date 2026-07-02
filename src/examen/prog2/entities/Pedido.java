@@ -38,7 +38,7 @@ public class Pedido extends Base implements Calculable {
         }
     }
 
-    // Método obligatorio del UML
+    
    public void addDetallePedido(Producto producto, int cantidad) {
     if (producto != null && cantidad > 0 && producto.getPrecio() > 0) {
         DetallePedido detalle = new DetallePedido(this, producto, cantidad);
@@ -91,7 +91,7 @@ public String toString() {
       .append(" | Rol: ").append(usuario.getRol()).append("\n");
     sb.append("================================================================\n");
     sb.append("Pedido #").append(getId())
-      .append(" | Fecha: ").append(" | Fecha: ").append(fecha)  // usa la fecha actual
+      .append(" | Fecha: ").append(fecha)  
       .append(" | Estado: ").append(estado)
       .append(" | FormaPago: ").append(formaPago).append("\n\n");
 
@@ -120,7 +120,8 @@ public int hashCode() {
     return Objects.hash(getId());
 }
 
-    public String getFecha() {
-        throw new UnsupportedOperationException("Not supported yet."); 
-    }
+// Getter correcto para fecha
+public LocalDate getFecha() {
+    return fecha;
+}
 }
