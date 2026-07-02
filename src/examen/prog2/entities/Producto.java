@@ -12,7 +12,7 @@ public class Producto extends Base {
     private boolean disponible;
     private Categoria categoria;
 
-    // Constructor: el id se asigna automáticamente desde Base
+    // Constructor el id se asigna  desde Base
     public Producto(String nombre, double precio, String descripcion,
                     int stock, String imagen, boolean disponible, Categoria categoria) {
         super(); // llama al constructor de Base que asigna id único
