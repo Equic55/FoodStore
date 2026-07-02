@@ -36,10 +36,10 @@ public class UsuarioService {
     public List<Usuario> listarUsuarios() {
         return usuarios.stream()
                 .filter(u -> !u.isEliminado())
-                .collect(Collectors.toList()); 
+                .collect(Collectors.toList()); // ✅ corregido
     }
 
-    // Buscar usuario por ID con nueva excepción
+    // Buscar usuario por ID con nueva excepcion
     public Usuario buscarPorId(Long id) throws EntidadNoEncontradaException {
         return usuarios.stream()
                 .filter(u -> u.getId().equals(id) && !u.isEliminado())
