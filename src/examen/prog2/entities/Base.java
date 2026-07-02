@@ -12,9 +12,9 @@ public abstract class Base {
     private static long contador = 1; // contador global para IDs únicos
     private final Long id;            // id único de cada entidad
     private boolean eliminado;        // baja lógica
-    private final LocalDateTime createdAt; // fecha de creación
+    private final LocalDateTime createdAt; // fecha de creacion
 
-    // Constructor automático: asigna id único a cada objeto
+    // Constructor  asigna id único a cada objeto
     public Base() {
         this.id = contador++;
         this.eliminado = false;
