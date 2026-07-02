@@ -1,3 +1,5 @@
+
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
@@ -13,7 +15,7 @@ public class Categoria extends Base {
     private String nombre;
     private String descripcion;
     private final List<Producto> productos;
-    private boolean eliminado = false; 
+    private boolean eliminado = false; // NUEVO ATRIBUTO
 
     // Constructor
     public Categoria(String nombre, String descripcion) {
