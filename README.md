@@ -60,3 +60,4 @@ src/examen/prog2
 - **Ezequiel Gonzalez**  
 - Estudiante de Programación en UTN  
 - Puerto Madryn, Argentina  
+ link video https://youtu.be/xU2TcV2ftkI
